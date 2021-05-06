@@ -1,0 +1,17 @@
+{
+  "name": "reactin10hours",
+  "version": "1.0.0",
+  "description": "Basic understanding of ReactJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "author": "Pedro Gomes",
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap": "^5.0.0",
+    "eslint": "^7.25.0"
+  }
+}
