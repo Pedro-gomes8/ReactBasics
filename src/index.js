@@ -3,12 +3,22 @@ import ReactDom from 'react-dom';
 
 
 import './index.css'
-// Nested Components
+
+const firstBook = {
+  src:"https://images-na.ssl-images-amazon.com/images/I/81eB%2B7%2BCkUL._AC_UL200_SR200,200_.jpg",
+  author: 'Pedrao',
+  title:'I love you to the moon',
+}
+const secondBook = {
+  src:"https://images-na.ssl-images-amazon.com/images/I/81l1UM7a4bS._AC_UL200_SR200,200_.jpg",
+  author: 'Mark R. Levin',
+  title:'American Marxism'
+}
 function BookList() {
   return <>
     <section className='mybooks'>
-      <Book/>
-      <Book/>
+      <Book src={firstBook.src} author={firstBook.author} title={firstBook.title}/>
+      <Book src={secondBook.src} author={secondBook.author} title={secondBook.title}/>
       <Book/>
       <Book/>
       <Book/>
@@ -18,21 +28,15 @@ function BookList() {
      </section>
     </>  
 }
-const Book =() => {
-  return <article>
-    <Image/>
-    <Name/>
-    <Author/>
+const Book =(props) => {
+  const {src,title, author} = props;
+  return (
+  <article>
+  <img src={src} alt="ue"/>
+  <h4 className='title'>{title} </h4>
+  <p id='autor'> {author}</p>
   </article>
-}
-const Image =() => <img src="https://images-na.ssl-images-amazon.com/images/I/81eB%2B7%2BCkUL._AC_UL200_SR200,200_.jpg" alt="ue"/>
-
-const Name = () =>{
-  return <h4 className='title'>I love you to the moon and back </h4>
-}
-
-const Author =() => {
-  return <p id='autor'> Pedro Gomes</p>
-}
+  )
+} 
 
 ReactDom.render(<BookList/>,document.getElementById('root'))
