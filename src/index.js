@@ -33,7 +33,7 @@ const Book =(props) => {
     alert(author)
   };
   return (
-  <article>
+  <article onMouseOver={()=> console.log(title)}>
   <img src={src} alt="ue"/>
   <h4 className='title'>{title} </h4>
   <p id='autor'> {author}</p>
